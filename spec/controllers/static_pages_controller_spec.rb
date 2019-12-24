@@ -8,7 +8,7 @@ RSpec.describe StaticPagesController, type: :controller do
   it "should get home" do
     get :home
     expect(response).to be_success
-    assert_select "title", "Home | #{base_title}"
+    assert_select "title", "#{base_title}"
   end
 
   it "should get help" do
