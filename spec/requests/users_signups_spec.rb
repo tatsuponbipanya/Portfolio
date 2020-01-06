@@ -13,6 +13,6 @@ RSpec.describe "UsersSignups", type: :request do
     follow_redirect!
     # Test
     assert_template 'users/show'
-    #assert is_logged_in?
+    assert is_logged_in?
   end
 end
