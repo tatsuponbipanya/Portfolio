@@ -1,24 +1,19 @@
-# README
+# 本番環境
+https://safe-chamber-83644.herokuapp.com/
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# 機能・使用技術一覧
+* Ruby 2.6.5
+* Ruby on Rails 5.1.6
+* PostgreSQL
+* SQLite
+* SASS
+* Bootstrap
+* BCrypt
+* CarrierWave
+* ImageMagick
+* Git, GitHub（チーム開発を意識したブランチ・プルリクエストの活用）
+* RSpec（単体・統合テスト）
+* AWS S3
+* Heroku
+* Windows Subsystem for Linux
+* Atom
