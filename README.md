@@ -8,12 +8,13 @@ https://safe-chamber-83644.herokuapp.com/
 * SQLite
 * SASS
 * Bootstrap
-* BCrypt
+* AWS S3
+* Ajax
 * CarrierWave
 * ImageMagick
+* BCrypt
 * Git, GitHub（チーム開発を意識したブランチ・プルリクエストの活用）
 * RSpec（単体・統合テスト）
-* AWS S3
 * Heroku
 * Windows Subsystem for Linux
 * Atom
