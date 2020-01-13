@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe StaticPagesController, type: :controller do
   render_views
 
-  let(:base_title) { 'Ruby on Rails Tutorial Sample App' }
+  let(:base_title) { 'TRAVEL MEMORIES' }
 
   it "should get home" do
     get :home

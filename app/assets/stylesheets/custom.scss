@@ -29,7 +29,15 @@ textarea {
   text-align: center;
   h1 {
     margin-bottom: 10px;
+    color: white;
   }
+}
+
+.jumbotron {
+  position: relative;
+  height: 85vh;
+  background:url(background.jpg) center no-repeat;
+  background-size: cover;
 }
 
 
@@ -45,15 +53,32 @@ h1 {
   letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: center;
+  color: white;
 }
 
 h2 {
-  font-size: 1.2em;
+  font-size: 1.4em;
   letter-spacing: -1px;
-  margin-bottom: 30px;
+  margin-bottom: 120px;
   text-align: center;
   font-weight: normal;
-  color: $gray-light;
+  color: white;
+}
+
+h3 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+  color: black;
+}
+
+h4 {
+  font-size: 1.5em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+  color: black;
 }
 
 p {
@@ -85,26 +110,18 @@ p {
 /* footer */
 
 footer {
-  margin-top: 45px;
+  margin-top:  5px;
   padding-top: 5px;
   border-top: 1px solid $gray-medium-light;
   color: &gray-light;
   a {
     color: $gray;
     &:hover {
-      color: $gray-darker;
+      color: white;
     }
   }
-  small {
-    float: left;
-  }
-  ul {
-    float: right;
-    list-style: none;
-    li {
-      float: left;
-      margin-left: 15px;
-    }
+  h3 {
+    text-align: center;
   }
 }
 
@@ -204,7 +221,7 @@ aside {
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
   width: 100%;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   @include box_sizing;
 }
 
