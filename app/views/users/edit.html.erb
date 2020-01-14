@@ -1,12 +1,12 @@
 <% provide(:title, 'Edit user') %>
-<% provide(:button_text, 'Save changes') %>
-<h1>Update your profile</h1>
+<% provide(:button_text, '変更を保存') %>
+<h3>設定変更</h3>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= render 'form' %>
     <div class="gravatar_edit">
       <%= gravatar_for @user %>
-      <a href="http://gravatar.com/emails" target="_blank">Change</a>
+      <a href="http://gravatar.com/emails" target="_blank">Gravatarでプロフィール画像を変更する</a>
     </div>
   </div>
 </div>

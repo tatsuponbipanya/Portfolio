@@ -29,11 +29,9 @@ class UsersController < ApplicationController
   end
 
   def edit
-    #@user = User.find(params[:id])
   end
 
   def update
-    @user = User.find(params[:id])
     if @user.update_attributes(user_params)
       flash[:success] = "プロフィールを更新しました。"
       redirect_to @user
@@ -49,14 +47,14 @@ class UsersController < ApplicationController
   end
 
   def following
-    @title = "Following"
+    @title = "フォロー"
     @user  = User.find(params[:id])
     @users = @user.following.paginate(page: params[:page])
     render 'show_follow'
   end
 
   def followers
-    @title = "Followers"
+    @title = "フォロワー"
     @user  = User.find(params[:id])
     @users = @user.followers.paginate(page: params[:page])
     render 'show_follow'
