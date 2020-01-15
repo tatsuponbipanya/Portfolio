@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails',                   '5.1.6'
 gem 'rails-i18n'
+gem 'counter_culture',         '~> 1.8'
 gem 'bcrypt',                  '3.1.12'
 gem 'carrierwave',             '1.2.2'
 gem 'mini_magick',             '4.7.0'
