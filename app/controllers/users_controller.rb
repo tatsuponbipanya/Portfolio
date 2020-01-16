@@ -5,7 +5,14 @@ class UsersController < ApplicationController
   before_action :admin_user,     only: :destroy
 
   def index
-    @users = User.paginate(page: params[:page])
+    if params[:q] && params[:q].reject { |key, value| value.blank? }.present?
+      @q = User.ransack(search_params, activated_true: true)
+      @title = "検索結果"
+    else
+      @q = User.ransack(activated_true: true)
+      @title = "全てのユーザー"
+    end
+    @users = @q.result.paginate(page: params[:page])
   end
 
   def show
@@ -66,7 +73,9 @@ class UsersController < ApplicationController
       params.require(:user).permit(:name, :email, :password, :password_confirmation)
     end
 
-    # beforeアクション
+    def search_params
+      params.require(:q).permit(:name_cont)
+    end
 
     # 正しいユーザーかどうか確認
     def correct_user
