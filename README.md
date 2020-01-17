@@ -4,7 +4,7 @@
 # 本番環境
 https://safe-chamber-83644.herokuapp.com/
 
-# 機能・使用技術一覧
+# 使用技術一覧
 * Ruby 2.6.5
 * Ruby on Rails 5.1.6
 * PostgreSQL
