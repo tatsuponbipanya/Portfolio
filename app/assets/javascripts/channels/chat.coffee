@@ -49,7 +49,7 @@ $(document).on 'keypress', '[data-behavior~=chat_speaker]', (event) ->
       event.target.value = ''
       event.preventDefault()
     else if value.length > 50
-      alert("Message should be less than 51 characters.")
+      alert("50文字以内で入力して下さい。")
       event.target.value = ''
       event.preventDefault()
     else
