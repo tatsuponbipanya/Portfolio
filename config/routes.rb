@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
+  mount ActionCable.server => '/cable'
   get 'sessions/new'
-
   get 'users/new'
 
   root 'static_pages#home'

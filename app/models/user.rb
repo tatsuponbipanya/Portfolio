@@ -9,7 +9,16 @@ class User < ApplicationRecord
   has_many :following, through: :active_relationships,  source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
   has_many :likes, dependent: :destroy
-  before_save { self.email = email.downcase }                               #emailの一意性を保証するために、emailを保存する前に全て小文字に変換する。
+  has_many :from_messages, class_name: "Message",
+            foreign_key: "from_id", dependent: :destroy
+  has_many :to_messages, class_name: "Message",
+            foreign_key: "to_id", dependent: :destroy
+  has_many :sent_messages, through: :from_messages, source: :from
+  has_many :received_messages, through: :to_messages, source: :to
+
+  # emailの一意性を保証するために、全て小文字に変換
+  before_save { self.email = email.downcase }
+
   validates :name,  presence: true, length: { maximum: 50 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
   validates :email, presence: true, length: { maximum: 255 },
@@ -47,5 +56,10 @@ class User < ApplicationRecord
   # 現在のユーザーがフォローしていたらtrueを返す
   def following?(other_user)
     following.include?(other_user)
+  end
+
+  # ユーザーにメッセージを送る
+  def send_message(other_user, room_id, content)
+    from_messages.create!(to_id: other_user.id, room_id: room_id, content: content)
   end
 end
