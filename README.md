@@ -13,11 +13,24 @@ https://safe-chamber-83644.herokuapp.com/
 * Bootstrap
 * AWS S3
 * Ajax
+* ActionCable
+* Ransack
 * CarrierWave
 * ImageMagick
 * BCrypt
 * Git, GitHub（チーム開発を意識したブランチ・プルリクエストの活用）
 * RSpec（単体・統合テスト）
-* Heroku
+* Heroku（Redis）
 * Windows Subsystem for Linux
 * Atom
+
+# 機能一覧
+* ユーザー登録・ログイン機能
+* 記事投稿機能
+  * 写真の投稿
+* ページネーション機能
+* 返信機能
+* いいね機能
+* フォロー機能
+* ユーザー検索機能
+* ダイレクトメッセージ機能
