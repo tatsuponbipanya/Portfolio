@@ -1,36 +1,36 @@
-User.create!(name:  "管理人",
-             email: "example@railstutorial.org",
+User.create!(name:  "たつぽん",
+             email: "tatsuponbipanya@gmail.com",
              password:              "bipanya",
              password_confirmation: "bipanya",
              admin: true)
 
 User.create!(name:  "しめじ",
-             email: "simeji@railstutorial.org",
+             email: "simeji20200119@gmail.com",
              password:              "123456",
              password_confirmation: "123456")
 
 User.create!(name:  "えのき",
-             email: "enoki@railstutorial.org",
+             email: "enoki20200119@gmail.com",
              password:              "123456",
              password_confirmation: "123456")
 
 User.create!(name:  "まいたけ",
-             email: "maitake@railstutorial.org",
+             email: "maitake20200119@gmail.com",
              password:              "123456",
              password_confirmation: "123456")
 
 User.create!(name:  "劉備玄徳",
-             email: "ryubi@railstutorial.org",
+             email: "ryubi20200119@gmail.com",
              password:              "123456",
              password_confirmation: "123456")
 
 User.create!(name:  "諸葛亮孔明",
-             email: "syokatsu@railstutorial.org",
+             email: "syokatsu20200119@gmail.com",
              password:              "123456",
              password_confirmation: "123456")
 
 User.create!(name:  "関羽雲長",
-             email: "kanu@railstutorial.org",
+             email: "kanu20200119@gmail.com",
              password:              "123456",
              password_confirmation: "123456")
 
