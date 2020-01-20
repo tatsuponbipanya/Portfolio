@@ -15,6 +15,7 @@ https://safe-chamber-83644.herokuapp.com/
 * Ajax
 * ActionCable
 * Ransack
+* Gravatar
 * CarrierWave
 * ImageMagick
 * BCrypt
