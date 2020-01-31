@@ -1,5 +1,5 @@
 # TRAVEL MEMORIES
-![Index](https://user-images.githubusercontent.com/54243961/73579798-da020400-44c6-11ea-9f5f-a30a1e5df7e4.png)
+![Index](https://user-images.githubusercontent.com/54243961/73580460-fd2db300-44c8-11ea-8249-8b539bfcb766.png)
 
 # 本番環境
 https://safe-chamber-83644.herokuapp.com/
