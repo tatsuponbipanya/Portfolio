@@ -63,3 +63,33 @@ User.create!(name:  "島津義弘",
              email: "simadu@railstutorial.org",
              password:              "123456",
              password_confirmation: "123456")
+
+User.create!(name:  "坂本竜馬",
+             email: "sakamoto@railstutorial.org",
+             password:              "123456",
+             password_confirmation: "123456")
+
+User.create!(name:  "桂小五郎",
+             email: "katsura@railstutorial.org",
+             password:              "123456",
+             password_confirmation: "123456")
+
+User.create!(name:  "勝海舟",
+             email: "kaisyu@railstutorial.org",
+             password:              "123456",
+             password_confirmation: "123456")
+
+User.create!(name:  "西郷隆盛",
+             email: "saigo@railstutorial.org",
+             password:              "123456",
+             password_confirmation: "123456")
+
+User.create!(name:  "高杉晋作",
+             email: "takasugi@railstutorial.org",
+             password:              "123456",
+             password_confirmation: "123456")
+
+User.create!(name:  "武市半平太",
+             email: "takechi@railstutorial.org",
+             password:              "123456",
+             password_confirmation: "123456")
