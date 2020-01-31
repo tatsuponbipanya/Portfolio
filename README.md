@@ -1,5 +1,5 @@
 # TRAVEL MEMORIES
-![toppage](https://user-images.githubusercontent.com/54243961/72616469-61edf700-397a-11ea-8cdf-8db200f47d63.png)
+![Index](https://user-images.githubusercontent.com/54243961/73579798-da020400-44c6-11ea-9f5f-a30a1e5df7e4.png)
 
 # 本番環境
 https://safe-chamber-83644.herokuapp.com/
@@ -26,7 +26,7 @@ https://safe-chamber-83644.herokuapp.com/
 * Atom
 
 # 機能一覧
-* ユーザー登録・ログイン機能
+* ユーザー登録・ログイン機能・かんたんログイン機能
 * 記事投稿機能
   * 写真の投稿
 * ページネーション機能
