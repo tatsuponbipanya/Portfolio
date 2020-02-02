@@ -1,4 +1,5 @@
 # TRAVEL MEMORIES
+旅の思い出を、写真付きで共有出来るサイトです。
 ![Index](https://user-images.githubusercontent.com/54243961/73580460-fd2db300-44c8-11ea-8249-8b539bfcb766.png)
 
 # 本番環境
