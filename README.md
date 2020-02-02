@@ -12,6 +12,7 @@ https://safe-chamber-83644.herokuapp.com/
 * SASS
 * Bootstrap
 * AWS S3
+* Google API(Maps・Geocoding)
 * Ajax
 * ActionCable
 * Ransack
@@ -27,6 +28,7 @@ https://safe-chamber-83644.herokuapp.com/
 
 # 機能一覧
 * ユーザー登録・ログイン機能・かんたんログイン機能
+* マップ表示機能・検索機能
 * 記事投稿機能
   * 写真の投稿
 * ページネーション機能
