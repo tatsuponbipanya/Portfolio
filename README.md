@@ -12,7 +12,7 @@ https://safe-chamber-83644.herokuapp.com/
 * SASS
 * Bootstrap
 * AWS S3
-* Google API(Maps・Geocoding)
+* Google API（Maps・Geocoding）
 * Ajax
 * ActionCable
 * Ransack
