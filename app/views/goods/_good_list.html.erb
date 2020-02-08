@@ -1,0 +1,14 @@
+<% if @items.present? %>
+  <h3>検索結果</h3>
+  <% i = 1 %>
+  <% @items.each do |item| %>
+    <table border="1" width="100%" cellspacing="0" cellpadding="5" bordercolor="#333333">
+      <tr>
+        <th bgcolor="#FFFFFF" width="3%"><font color="#000000"><%= i %><% i += 1 %></font></th>
+        <th bgcolor="#FFFFFF" width="7%"><font color="#FFFFFF"><img src="<%= item['smallImageUrls'][0] %>"></font></th>
+        <th bgcolor="#FFFFFF" width="85%"><font color="#FFFFFF"><a href="<%= item['itemUrl'] %>" target="_blank"><%= item['itemName'] %></a></font></th>
+        <th bgcolor="#FFFFFF" width="5%"><font color="#000000"><%= item['itemPrice'] %>円</font></th>
+      </tr>
+    </table>
+  <% end %>
+<% end %>

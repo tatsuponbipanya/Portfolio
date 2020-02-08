@@ -1,0 +1,15 @@
+<% provide(:title, "商品検索") %>
+<h3>商品検索</h3>
+旅行用グッズの検索等にご利用下さい。
+<div class='content'>
+  <div id="search-box">
+    <%= form_tag('/search', method: :get) do %>
+        <%= text_field_tag :good, "",  id: "good_search", name: "keyword", placeholder: "キーワードを入力" %>
+        <button title="検索" style="width:100%;" type="submit">検索</button>
+    <% end %>
+  </div>
+  <br><br>
+  <div id='good_list'>
+     <%= render partial: 'good_list' %>
+  </div>
+</div>
