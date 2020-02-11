@@ -1,21 +1,25 @@
 <% if logged_in? %>
   <div class="row">
-    <aside class="col-md-4">
+    <aside class="col-md-3">
       <section class="user_info">
         <%= render 'shared/user_info' %>
       </section>
       <section class="stats">
         <%= render 'shared/stats' %>
       </section>
-      <br>@ユーザーID ユーザーネーム で返信出来ます。
-      <br>（例） @1 管理人 こんにちは
+      <br>【返信機能の使い方】
+      <br>  @ID 名前 本文
+      <br>  @6 諸葛亮孔明 こんにちは（例）
       <section class="micropost_form">
         <%= render 'shared/micropost_form' %>
       </section>
     </aside>
-    <div class="col-md-8">
+    <div class="col-md-6">
       <h3>最近の投稿</h3>
       <%= render 'shared/feed' %>
+    </div>
+    <div class="col-md-3">
+      <%= render 'shared/user_info' %>
     </div>
   </div>
 <% else %>

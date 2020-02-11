@@ -15,6 +15,7 @@ $gray-medium-light: #eaeaea;
 
 body {
   padding-top: 60px;
+  background-color: #CCFFCC;
 }
 
 section {
@@ -66,7 +67,7 @@ h2 {
 }
 
 h3 {
-  font-size: 3em;
+  font-size: 2.7em;
   letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: center;
@@ -318,6 +319,7 @@ span.picture {
 /* search form */
 
 .search_form {
+  position: relative;
   overflow: auto;
   margin: 10px;
   float: right;
