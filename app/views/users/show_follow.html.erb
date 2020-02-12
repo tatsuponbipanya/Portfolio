@@ -1,11 +1,12 @@
 <% provide(:title, @title) %>
 <div class="row">
-  <aside class="col-md-4">
+  <div class="col-md-4">
     <section class="user_info">
+      <h3>プロフィール</h3>
       <%= gravatar_for @user %>
-      <h5><%= @user.name %></h5>
+      <%= @user.name %><br>
+      <span><b>記事投稿数:</b> <%= @user.microposts.count %></span><br>
       <span><%= link_to "プロフィール", @user %></span>
-      <span><b>記事投稿数:</b> <%= @user.microposts.count %></span>
     </section>
     <section class="stats">
       <%= render 'shared/stats' %>
@@ -17,7 +18,7 @@
         </div>
       <% end %>
     </section>
-  </aside>
+  </div>
   <div class="col-md-8">
     <h3><%= @title %></h3>
     <% if @users.any? %>

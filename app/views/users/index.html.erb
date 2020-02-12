@@ -1,14 +1,11 @@
 <% provide(:title, @title) %>
 <h3><%= @title %></h3>
-
 <div class="row">
   <div class="search_form">
     <%= render 'users/search_form' %>
   </div>
 </div>
-
 <%= will_paginate %>
-
 <% unless @users.empty? %>
   <ul class="users">
     <%= render @users %>
@@ -18,5 +15,4 @@
     ユーザーが見つかりません。
   </p>
 <% end %>
-
 <%= will_paginate %>

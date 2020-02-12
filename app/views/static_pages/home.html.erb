@@ -1,32 +1,36 @@
 <% if logged_in? %>
   <div class="row">
-    <aside class="col-md-3">
+    <div class="col-md-3">
       <section class="user_info">
+        <h3>プロフィール</h3>
         <%= render 'shared/user_info' %>
       </section>
       <section class="stats">
         <%= render 'shared/stats' %>
       </section>
+      <br><h3>投稿しよう！</h3>
       <br>【返信機能の使い方】
       <br>  @ID 名前 本文
       <br>  @6 諸葛亮孔明 こんにちは（例）
       <section class="micropost_form">
         <%= render 'shared/micropost_form' %>
       </section>
-    </aside>
+    </div>
     <div class="col-md-6">
-      <h3>最近の投稿</h3>
+      <h3>みんなの投稿一覧</h3>
       <%= render 'shared/feed' %>
     </div>
     <div class="col-md-3">
-      <%= render 'shared/user_info' %>
+      <section class="user_info">
+        <%= render 'users/link' %>
+      </section>
     </div>
   </div>
 <% else %>
   <div class="center jumbotron">
     <h1>TRAVEL MEMORIES</h1>
     <h2>
-      旅の思い出を、写真付きで共有出来るサイトです。
+      旅の思い出を、みんなで共有しよう。
     </h2>
     <%= link_to "新規登録（無料）", 'signup', class: "btn btn-lg btn-primary" %><br><br>
     <%= link_to "ログイン（無料）", login_path, class: "btn btn-lg btn-primary" %><br><br>

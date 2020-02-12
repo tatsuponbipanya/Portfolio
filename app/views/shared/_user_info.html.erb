@@ -1,4 +1,4 @@
 <%= link_to gravatar_for(current_user, size: 50), current_user %>
-<h5><%= current_user.name %></h5>
-<span><%= link_to "プロフィール", current_user %></span>
-<span><%= pluralize(current_user.microposts.count, "件投稿済み") %></span>
+<%= current_user.name %><br>
+<span><%= pluralize(current_user.microposts.count, "件投稿") %></span>
+(<span><%= link_to "詳細", current_user %></span>)

@@ -15,7 +15,6 @@ $gray-medium-light: #eaeaea;
 
 body {
   padding-top: 60px;
-  background-color: #CCFFCC;
 }
 
 section {
@@ -50,32 +49,55 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 3em;
-  letter-spacing: -2px;
-  margin-bottom: 30px;
-  text-align: center;
-  color: white;
+  font-size:5em;
+	text-align:center;
+	line-height:0.95em;
+	font-weight:bold;
+	color: #00FFCC;
+	text-shadow:
+		1px -1px 1px #BDBDBD,
+		-1px 2px 1px #737272,
+		-2px 4px 1px #767474,
+		-3px 6px 1px #787777,
+		-4px 8px 1px #424242,
+		-5px 10px 1px #616161,
+		-6px 12px 1px #757575,
+		-7px 14px 1px #9E9E9E,
+		-8px 16px 1px #BDBDBD,
+		-9px 18px 1px #E0E0E0;
 }
 
 h2 {
-  font-size: 1.4em;
-  letter-spacing: -1px;
+  font-size:1.4em;
+	text-align:center;
+	line-height:0.95em;
+	font-weight:bold;
+	color: #FFF;
+	text-shadow:
+		0 0 0.10em #2962FF,
+		0 0 0.15em #2962FF,
+		0 0 0.80em #2962FF,
+		0 0 1.00em #2962FF;
   margin-bottom: 100px;
-  text-align: center;
-  font-weight: normal;
-  color: white;
 }
 
 h3 {
-  font-size: 2.7em;
-  letter-spacing: -2px;
-  margin-bottom: 30px;
+  border-bottom: solid 3px skyblue;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+h3:after {
   text-align: center;
-  color: black;
+  content: " ";
+  display: block;
+  border-bottom: solid 3px #ffc778;
+  bottom: -30px;
+  width: 30%;
 }
 
 h4 {
-  font-size: 1.5em;
+  font-size: 1.6em;
   letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: center;
@@ -83,16 +105,44 @@ h4 {
 }
 
 h5 {
-  font-size: 1.3em;
-  letter-spacing: -2px;
-  margin-bottom: 30px;
-  text-align: left;
-  color: black;
+  position: relative;
+  color: #158b2b;
+  font-size: 20px;
+  padding: 10px 0;
+  text-align: center;
+  margin: 1.5em 0;
+}
+h5:before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  width: 150px;
+  height: 58px;
+  border-radius: 50%;
+  border: 5px solid #a6ddb0;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 p {
   font-size: 1.1em;
   line-height: 1.7em;
+}
+
+.cp_link {
+	padding: 0.1em 0.3em;
+	background-image: linear-gradient(to right, rgba(0,0,0,0) 50%, rgba(255,152,0,1) 50%);
+	background-position: 0 0;
+	background-size: 200% auto;
+	transition: .3s;
+	color: #ff9800;
+}
+.cp_link:hover {
+	background-position: -100% 0;
+	color: #fff;
 }
 
 

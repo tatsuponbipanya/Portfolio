@@ -93,3 +93,68 @@ User.create!(name:  "武市半平太",
              email: "takechi@railstutorial.org",
              password:              "123456",
              password_confirmation: "123456")
+
+User.create!(name:  "孫正義",
+             email: "son@railstutorial.org",
+             password:              "123456",
+             password_confirmation: "123456")
+
+User.create!(name:  "Bill Gates",
+             email: "gates@railstutorial.org",
+             password:              "123456",
+             password_confirmation: "123456")
+
+User.create!(name:  "Steve Jobs",
+             email: "jobs@railstutorial.org",
+             password:              "123456",
+             password_confirmation: "123456")
+
+User.create!(name:  "Mark Zuckerberg",
+             email: "mark@railstutorial.org",
+             password:              "123456",
+             password_confirmation: "123456")
+
+User.create!(name:  "Warren Buffett",
+             email: "warren@railstutorial.org",
+             password:              "123456",
+             password_confirmation: "123456")
+
+User.create!(name:  "Jeffrey Bezos",
+             email: "bezos@railstutorial.org",
+             password:              "123456",
+             password_confirmation: "123456")
+
+User.create!(name:  "司馬遼太郎",
+             email: "shiba@railstutorial.org",
+             password:              "123456",
+             password_confirmation: "123456")
+
+User.create!(name:  "吉川英治",
+             email: "yoshi@railstutorial.org",
+             password:              "123456",
+             password_confirmation: "123456")
+
+User.create!(name:  "島津斉彬",
+             email: "simaakira@railstutorial.org",
+             password:              "123456",
+             password_confirmation: "123456")
+
+User.create!(name:  "大久保利通",
+             email: "ookubo@railstutorial.org",
+             password:              "123456",
+             password_confirmation: "123456")
+
+User.create!(name:  "吉田松陰",
+             email: "syouin@railstutorial.org",
+             password:              "123456",
+             password_confirmation: "123456")
+
+User.create!(name:  "マシュー・ペリー",
+             email: "peri@railstutorial.org",
+             password:              "123456",
+             password_confirmation: "123456")
+
+User.create!(name:  "タウンゼント・ハリス",
+             email: "hari@railstutorial.org",
+             password:              "123456",
+             password_confirmation: "123456")

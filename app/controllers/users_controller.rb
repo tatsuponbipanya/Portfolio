@@ -12,12 +12,12 @@ class UsersController < ApplicationController
       @q = User.ransack(activated_true: true)
       @title = "全てのユーザー"
     end
-    @users = @q.result.paginate(page: params[:page])
+    @users = @q.result.paginate(page: params[:page], per_page: 20)
   end
 
   def show
     @user = User.find(params[:id])
-    @microposts = @user.microposts.paginate(page: params[:page])
+    @microposts = @user.microposts.paginate(page: params[:page], per_page: 10)
     @room_id = message_room_id(current_user, @user)
     @messages = Message.recent_in_room(@room_id)
   end
@@ -58,14 +58,14 @@ class UsersController < ApplicationController
   def following
     @title = "フォロー"
     @user  = User.find(params[:id])
-    @users = @user.following.paginate(page: params[:page])
+    @users = @user.following.paginate(page: params[:page], per_page: 20)
     render 'show_follow'
   end
 
   def followers
     @title = "フォロワー"
     @user  = User.find(params[:id])
-    @users = @user.followers.paginate(page: params[:page])
+    @users = @user.followers.paginate(page: params[:page], per_page: 20)
     render 'show_follow'
   end
 
