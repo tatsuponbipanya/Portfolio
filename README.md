@@ -1,7 +1,6 @@
 # TRAVEL MEMORIES
-旅の思い出を、写真付きで共有出来るサイトです。
-![Index](https://user-images.githubusercontent.com/54243961/73580460-fd2db300-44c8-11ea-8249-8b539bfcb766.png)
-
+旅行のプランを立てたり、思い出を共有出来るサイトです。
+![top](https://user-images.githubusercontent.com/54243961/74304543-a5ccf400-4da0-11ea-95d9-e81030d58881.png)
 # 本番環境
 https://safe-chamber-83644.herokuapp.com/
 
@@ -35,6 +34,7 @@ https://safe-chamber-83644.herokuapp.com/
 * 記事投稿機能
   * 写真の投稿
 * ページネーション機能
+* お役立ちリンク集
 * 返信機能
 * いいね機能
 * フォロー機能
