@@ -22,6 +22,10 @@ gem 'jquery-turbolinks'
 gem 'jbuilder',                '2.7.0'
 
 group :development, :test do
+  gem 'capistrano'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
   gem 'sqlite3', '1.3.13'
   gem 'rspec-rails'
   gem 'byebug',  '9.0.6', platform: :mri
@@ -48,7 +52,8 @@ group :test do
   gem 'selenium-webdriver', '~>2.45.0'
 end
 
-group :production do
+group :production, :staging do
+  gem 'unicorn'
   gem 'pg', '0.20.0'
   gem 'fog'
 end
