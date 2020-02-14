@@ -10,7 +10,7 @@
 server '18.180.17.62', user: 'tatsupon', roles: %w{app db web}
 
 #デプロイするサーバーにsshログインする鍵の情報を記述
-set :ssh_options, keys: '~/.ssh/aws_git_rsa.pub'
+set :ssh_options, keys: '~/.ssh/aiueo_key_rsa.pub'
 
 
 # role-based syntax
