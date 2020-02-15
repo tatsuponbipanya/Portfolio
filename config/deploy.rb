@@ -1,7 +1,7 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.12.0"
 
-set :application, "portfolio"
+set :application, "Portfolio"
 set :repo_url, "git@github.com:tatsuponbipanya/Portfolio.git"
 
 # Default branch is :master
@@ -27,7 +27,7 @@ set :linked_files, fetch(:linked_files, []).push('config/settings.yml')
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
 
 # Default value for default_env is {}
-# set :default_env, { path: "/opt/ruby/bin:$PATH" }
+# set :default_env, {   rbenv_root: "/home/tatsupon/.rbenv" }
 
 # Default value for local_user is ENV['USER']
 # set :local_user, -> { `git config user.name`.chomp }
@@ -36,7 +36,9 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', '
 set :keep_releases, 5
 
 # rubyのバージョン
+set :rbenv_type, :user
 set :rbenv_ruby, '2.6.5'
+set :rbenv_custom_path, '/home/tatsupon/.rbenv'
 
 #出力するログのレベル。
 set :log_level, :debug
