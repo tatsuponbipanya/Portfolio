@@ -55,6 +55,7 @@ end
 
 group :production, :staging do
   gem 'unicorn'
+  gem 'sqlite3', '1.3.13'
   gem 'pg', '0.20.0'
   gem 'fog'
 end
