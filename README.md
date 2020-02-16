@@ -2,16 +2,16 @@
 旅行のプランを立てたり、思い出を共有出来るサイトです。
 ![top](https://user-images.githubusercontent.com/54243961/74304543-a5ccf400-4da0-11ea-95d9-e81030d58881.png)
 # 本番環境
-https://safe-chamber-83644.herokuapp.com/
-
+AWS  http://18.180.17.62/   
+Heroku  https://safe-chamber-83644.herokuapp.com/
 # 使用技術一覧
 * Ruby 2.6.5
 * Ruby on Rails 5.1.6
 * PostgreSQL
-* SQLite
-* SASS
-* Bootstrap
-* AWS S3
+* SQLite3
+* Capistrano（自動デプロイ）
+* AWS（S3・VPC・EC2・Elastic IP）
+* Unicron + Nginx
 * Google API（Maps・Geocoding）
 * 楽天API
 * Ajax
@@ -21,6 +21,8 @@ https://safe-chamber-83644.herokuapp.com/
 * CarrierWave
 * ImageMagick
 * BCrypt
+* SASS
+* Bootstrap
 * Git, GitHub（チーム開発を意識したブランチ・プルリクエストの活用）
 * RSpec（単体・統合テスト）
 * Heroku（Redis）
