@@ -2,7 +2,7 @@
 旅行のプランを立てたり、思い出を共有出来るサイトです。
 ![top](https://user-images.githubusercontent.com/54243961/74304543-a5ccf400-4da0-11ea-95d9-e81030d58881.png)
 # 本番環境
-AWS  http://travel-memories-2020.com/
+AWS  http://travel-memories-2020.com/    
 Heroku  https://safe-chamber-83644.herokuapp.com/
 # 使用技術一覧
 * Ruby 2.6.5
