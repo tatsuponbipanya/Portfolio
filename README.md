@@ -42,3 +42,6 @@ Heroku  https://safe-chamber-83644.herokuapp.com/
 * フォロー機能
 * ユーザー検索機能
 * ダイレクトメッセージ機能
+
+# AWS構成図
+![AWS構成図](https://user-images.githubusercontent.com/54243961/74997898-97ff2900-549a-11ea-8018-f84b12c79efc.png)
