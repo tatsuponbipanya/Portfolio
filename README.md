@@ -25,6 +25,7 @@ Heroku  https://safe-chamber-83644.herokuapp.com/
 * Bootstrap
 * Git, GitHub（チーム開発を意識したブランチ・プルリクエストの活用）
 * RSpec（単体・統合テスト）
+* Rubocop（静的コード解析）
 * Heroku（Redis）
 * Windows Subsystem for Linux
 * Atom
