@@ -1,10 +1,11 @@
+# frozen_string_literal: true
+
 class ChatChannel < ApplicationCable::Channel
   def subscribed
     stream_from "chat_channel_#{params[:room_id]}"
   end
 
-  def unsubscribed
-  end
+  def unsubscribed; end
 
   def speak(data)
     from_user = User.find_by(id: data['from_id'].to_s)

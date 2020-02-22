@@ -1,11 +1,12 @@
+# frozen_string_literal: true
+
 class SessionsController < ApplicationController
-  def new
-  end
+  def new; end
 
   def create
     user = User.find_by(email: params[:session][:email].downcase)
-    if user && user.authenticate(params[:session][:password])
-      flash[:success] = "ログインしました。"
+    if user&.authenticate(params[:session][:password])
+      flash[:success] = 'ログインしました。'
       log_in user
       redirect_back_or user
     else
@@ -15,7 +16,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    flash[:success] = "ログアウトしました。"
+    flash[:success] = 'ログアウトしました。'
     log_out
     redirect_to root_url
   end

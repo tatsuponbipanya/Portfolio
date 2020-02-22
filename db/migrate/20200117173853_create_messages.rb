@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateMessages < ActiveRecord::Migration[5.1]
   def change
     create_table :messages do |t|
@@ -8,6 +10,6 @@ class CreateMessages < ActiveRecord::Migration[5.1]
 
       t.timestamps
     end
-    add_index :messages, [:room_id, :created_at]
+    add_index :messages, %i[room_id created_at]
   end
 end

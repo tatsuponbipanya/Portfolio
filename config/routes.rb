@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   mount ActionCable.server => '/cable'
   get 'sessions/new'
@@ -14,7 +16,7 @@ Rails.application.routes.draw do
   get    '/login',    to: 'sessions#new'
   post   '/login',    to: 'sessions#create'
   delete '/logout',   to: 'sessions#destroy'
-  resources :likes, only: [:create, :destroy]
+  resources :likes, only: %i[create destroy]
   resources :testsessions, only: :create
   resources :users do
     member do
@@ -22,7 +24,7 @@ Rails.application.routes.draw do
     end
   end
   resources :account_activations, only: [:edit]
-  resources :password_resets,     only: [:new, :create, :edit, :update]
-  resources :microposts,          only: [:create, :destroy]
-  resources :relationships,       only: [:create, :destroy]
+  resources :password_resets,     only: %i[new create edit update]
+  resources :microposts,          only: %i[create destroy]
+  resources :relationships,       only: %i[create destroy]
 end

@@ -1,14 +1,16 @@
-# config valid for current version and patch releases of Capistrano
-lock "~> 3.12.0"
+# frozen_string_literal: true
 
-set :application, "Portfolio"
-set :repo_url, "git@github.com:tatsuponbipanya/Portfolio.git"
+# config valid for current version and patch releases of Capistrano
+lock '~> 3.12.0'
+
+set :application, 'Portfolio'
+set :repo_url, 'git@github.com:tatsuponbipanya/Portfolio.git'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, "/var/www/rails/Portfolio"
+set :deploy_to, '/var/www/rails/Portfolio'
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
@@ -40,18 +42,16 @@ set :rbenv_type, :user
 set :rbenv_ruby, '2.6.5'
 set :rbenv_custom_path, '/home/tatsupon/.rbenv'
 
-#出力するログのレベル。
+# 出力するログのレベル。
 set :log_level, :debug
-
 namespace :deploy do
   desc 'Restart application'
   task :restart do
     invoke 'unicorn:restart'
   end
-
   desc 'Create database'
   task :db_create do
-    on roles(:db) do |host|
+    on roles(:db) do |_host|
       with rails_env: fetch(:rails_env) do
         within current_path do
           execute :bundle, :exec, :rake, 'db:create'
@@ -59,7 +59,6 @@ namespace :deploy do
       end
     end
   end
-
   desc 'Run seed'
   task :seed do
     on roles(:app) do
@@ -70,9 +69,7 @@ namespace :deploy do
       end
     end
   end
-
   after :publishing, :restart
-
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
     end

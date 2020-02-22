@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
 FactoryGirl.define do
   factory :user do
-    name "MyString"
-    email "MyString"
+    name 'MyString'
+    email 'MyString'
   end
 end

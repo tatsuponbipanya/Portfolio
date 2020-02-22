@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class GoodsController < ApplicationController
   def search
     if params[:keyword]

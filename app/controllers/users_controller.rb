@@ -1,16 +1,18 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: [:index, :edit, :update, :destroy,
-                                        :following, :followers]
-  before_action :correct_user,   only: [:edit, :update]
+  before_action :logged_in_user, only: %i[index edit update destroy
+                                          following followers]
+  before_action :correct_user,   only: %i[edit update]
   before_action :admin_user,     only: :destroy
 
   def index
-    if params[:q] && params[:q].reject { |key, value| value.blank? }.present?
+    if params[:q] && params[:q].reject { |_key, value| value.blank? }.present?
       @q = User.ransack(search_params, activated_true: true)
-      @title = "検索結果"
+      @title = '検索結果'
     else
       @q = User.ransack(activated_true: true)
-      @title = "全てのユーザー"
+      @title = '全てのユーザー'
     end
     @users = @q.result.paginate(page: params[:page], per_page: 20)
   end
@@ -30,19 +32,18 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in @user
-      flash[:success] = "TRAVEL MEMORIESへようこそ!"
+      flash[:success] = 'TRAVEL MEMORIESへようこそ!'
       redirect_to @user
     else
       render 'new'
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @user.update_attributes(user_params)
-      flash[:success] = "プロフィールを更新しました。"
+      flash[:success] = 'プロフィールを更新しました。'
       redirect_to @user
     else
       render 'edit'
@@ -51,19 +52,19 @@ class UsersController < ApplicationController
 
   def destroy
     User.find(params[:id]).destroy
-    flash[:success] = "ユーザーを削除しました。"
+    flash[:success] = 'ユーザーを削除しました。'
     redirect_to users_url
   end
 
   def following
-    @title = "フォロー"
+    @title = 'フォロー'
     @user  = User.find(params[:id])
     @users = @user.following.paginate(page: params[:page], per_page: 20)
     render 'show_follow'
   end
 
   def followers
-    @title = "フォロワー"
+    @title = 'フォロワー'
     @user  = User.find(params[:id])
     @users = @user.followers.paginate(page: params[:page], per_page: 20)
     render 'show_follow'
@@ -81,22 +82,22 @@ class UsersController < ApplicationController
 
   private
 
-    def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation)
-    end
+  def user_params
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  end
 
-    def search_params
-      params.require(:q).permit(:name_cont)
-    end
+  def search_params
+    params.require(:q).permit(:name_cont)
+  end
 
-    # 正しいユーザーかどうか確認
-    def correct_user
-      @user = User.find(params[:id])
-      redirect_to(root_url) unless current_user?(@user)
-    end
+  # 正しいユーザーかどうか確認
+  def correct_user
+    @user = User.find(params[:id])
+    redirect_to(root_url) unless current_user?(@user)
+  end
 
-    # 管理者かどうか確認
-    def admin_user
-      redirect_to(root_url) unless current_user.admin?
-    end
+  # 管理者かどうか確認
+  def admin_user
+    redirect_to(root_url) unless current_user.admin?
+  end
 end

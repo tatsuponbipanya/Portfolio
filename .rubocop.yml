@@ -1,0 +1,37 @@
+inherit_from: .rubocop_todo.yml
+
+# 日本語でのコメントを許可
+AsciiComments:
+  Enabled: false
+
+# モジュール名::クラス名の定義を許可
+ClassAndModuleChildren:
+  Enabled: false
+
+# メソッド名のprefixに「set_」「get_」を許可
+AccessorMethodName:
+  Enabled: false
+
+# 「and」「or」の使用を許可
+AndOr:
+  Enabled: false
+
+# マジックコメント
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+# AbcSize
+Metrics/AbcSize:
+  Max: 20
+
+# 1行あたりの文字数
+LineLength:
+  Max: 130
+
+# "Missing top-level class documentation comment."を無効
+Style/Documentation:
+  Enabled: false
+
+# グローバル変数の許可
+GlobalVars:
+  AllowedVariables: [$pid, $listen, $timeout, $std_log, $app_dir, $worker]
