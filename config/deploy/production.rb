@@ -8,10 +8,10 @@
 # server "example.com", user: "deploy", roles: %w{app db web}, my_property: :my_value
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
-# EC2サーバーのIP、EC2サーバーにログインするユーザー名、サーバーのロールを記述
+# EC2サーバーのIP、ログインするユーザー名、サーバーのロール
 server '18.180.17.62', user: 'tatsupon', roles: %w[app db web]
 
-# デプロイするサーバーにsshログインする鍵の情報を記述
+# EC2サーバーにsshログインする鍵の情報
 set :ssh_options, keys: ['~/.ssh/aiueo_key_rsa']
 
 # role-based syntax

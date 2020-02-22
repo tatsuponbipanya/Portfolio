@@ -42,7 +42,7 @@ set :rbenv_type, :user
 set :rbenv_ruby, '2.6.5'
 set :rbenv_custom_path, '/home/tatsupon/.rbenv'
 
-# 出力するログのレベル。
+# 出力するログのレベル
 set :log_level, :debug
 namespace :deploy do
   desc 'Restart application'

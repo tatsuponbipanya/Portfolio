@@ -3,7 +3,7 @@
 # set lets
 $worker = 2
 $timeout = 30
-$app_dir = '/var/www/rails/Portfolio' # 自分のアプリケーション名
+$app_dir = '/var/www/rails/Portfolio'
 $listen  = File.expand_path 'sockets/unicorn.sock', $app_dir
 $pid     = File.expand_path 'tmp/pids/unicorn.pid', $app_dir
 $std_log = File.expand_path 'log/unicorn.log', $app_dir

@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 
   private
 
-  # ユーザーのログインを確認する
+  # ユーザーのログインを確認
   def logged_in_user
     unless logged_in?
       store_location
