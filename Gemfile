@@ -1,3 +1,4 @@
+ruby '3.2.10'
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
@@ -7,10 +8,9 @@ gem 'bootstrap-sass',          '3.4.1'
 gem 'sassc', '~> 2.4.0'
 gem 'bootstrap-will_paginate', '1.0.0'
 gem "bundler", "~> 2.4"
+gem 'logger'
+gem 'will_paginate', '>= 3.3.0'
 gem 'carrierwave', '1.2.2'
-gem 'google-apis-drive_v3'
-gem 'google-apis-sheets_v4'
-gem 'google-api-client', '~> 0.53'
 gem 'coffee-rails', '4.2.2'
 gem 'counter_culture', '~> 1.8'
 gem 'gravtastic'
@@ -24,19 +24,17 @@ gem 'rails-i18n'
 gem 'rakuten_web_service'
 gem 'ransack'
 gem 'sassc-rails', '~> 2.1.2'
-gem 'sqlite3', '1.4'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '3.2.0'
-gem 'will_paginate', '3.1.6'
 
 group :development, :test do
+  gem 'sqlite3', '~> 1.3.13' # 重複してる分は消して一つにする！
   gem 'byebug', '9.0.6', platform: :mri
   gem 'capistrano'
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano-rbenv'
-  gem 'sqlite3', '1.4'
-  gem 'factory_girl_rails', '~> 4.2.1'
+  gem 'factory_bot_rails'
   gem 'rspec-rails'
 end
 
@@ -63,7 +61,7 @@ group :test do
 end
 
 group :production, :staging do
-  gem 'pg', '0.20.0'
+  gem 'pg'
   gem 'unicorn'
   gem 'fog'
 end
