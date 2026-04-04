@@ -61,7 +61,7 @@ group :test do
 end
 
 group :production, :staging do
-  gem 'pg'
+  gem 'pg', '~> 1.1'
   gem 'unicorn'
   gem 'fog-aws'
 end
