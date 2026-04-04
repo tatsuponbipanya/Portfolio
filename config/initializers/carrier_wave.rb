@@ -1,15 +1,8 @@
 # frozen_string_literal: true
 
-if Rails.env.production?
-  CarrierWave.configure do |config|
-    config.fog_provider = 'fog/aws' # ← これを必ず追加！
-    config.fog_credentials = {
-      provider: 'AWS',
-      region: ENV['S3_REGION'],
-      aws_access_key_id: ENV['S3_ACCESS_KEY'],
-      aws_secret_access_key: ENV['S3_SECRET_KEY']
-    }
-    config.fog_directory = ENV['S3_BUCKET']
-    config.storage = :fog # ← これも念のため明示しておくと安心だじぇ
-  end
-end
+# 今はAWS S3を使わないので、この設定は一旦オフにするじぇ！
+# if Rails.env.production?
+#   CarrierWave.configure do |config|
+#     config.storage = :file # 本番でもディスクに保存する場合（※Renderでは再起動で消える点に注意）
+#   end
+# end
