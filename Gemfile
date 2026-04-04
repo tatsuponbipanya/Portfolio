@@ -63,7 +63,7 @@ end
 group :production, :staging do
   gem 'pg'
   gem 'unicorn'
-  gem 'fog'
+  gem 'fog-aws'
 end
 
 # Windows環境ではtzinfo-dataというgemを含める必要があります
