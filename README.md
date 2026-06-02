@@ -4,31 +4,20 @@
 # 本番環境
 AWS  https://sns.travel-memories-2020.com/   
 Render https://portfolio-uffa.onrender.com/
-# 使用技術一覧
-* Ruby 3.2.10
-* Ruby on Rails 5.1.6
-* PostgreSQL
-* SQLite3
-* Capistrano（自動デプロイ）
-* AWS（S3・VPC・EC2・Elastic IP・Route53・ACM・ロードバランサー）
-* Unicron + Nginx
-* Google API（Maps・Geocoding）
-* 楽天API
-* Ajax
-* ActionCable
-* Ransack
-* Gravatar
-* CarrierWave
-* ImageMagick
-* BCrypt
-* SASS
-* Bootstrap
-* Git, GitHub（チーム開発を意識したブランチ・プルリクエストの活用）
-* RSpec（単体・統合テスト）
-* Rubocop（静的コード解析）
-* Heroku（Redis）
-* Windows Subsystem for Linux
-* Atom
+# 使用技術 / Technology
+**Backend:** 　Ruby on Rails, Ruby
+
+**Database:** 　PostgreSQL, SQLite3
+
+**Frontend:**　 Bootstrap, SASS, Ajax, JavaScript
+
+**Infrastructure:** 　AWS (EC2, S3, RDS, ALB, Route53, ACM), Capistrano, Nginx, Unicorn
+
+**API:** 　Google Maps API, Geocoding API, 楽天API
+
+**Test/Code Quality:** 　RSpec, RuboCop
+
+**Tools:** 　Git, GitHub, WSL2
 
 # 機能一覧
 * ユーザー登録・ログイン機能・かんたんログイン機能
