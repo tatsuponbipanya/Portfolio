@@ -1,0 +1,12 @@
+test:
+  service: Disk
+  root: <%= Rails.root.join("tmp/storage") %>
+
+local:
+  service: Disk
+  root: <%= Rails.root.join("storage") %>
+
+# Render（本番環境）用の設定
+production:
+  service: Disk
+  root: <%= Rails.root.join("storage") %>

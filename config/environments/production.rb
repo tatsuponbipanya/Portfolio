@@ -90,4 +90,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  
+  # Active Storageで利用するサービス（storage.ymlで定義したもの）を指定
+  config.active_storage.service = :local
 end
