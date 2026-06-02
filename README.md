@@ -5,7 +5,7 @@
 AWS  https://sns.travel-memories-2020.com/   
 Render https://portfolio-uffa.onrender.com/
 # 使用技術一覧
-* Ruby 2.6.5
+* Ruby 3.2.10
 * Ruby on Rails 5.1.6
 * PostgreSQL
 * SQLite3
