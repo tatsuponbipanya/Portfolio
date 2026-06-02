@@ -9,25 +9,25 @@ RSpec.describe StaticPagesController, type: :controller do
 
   it 'should get home' do
     get :home
-    expect(response).to be_success
+    expect(response).to be_successful
     assert_select 'title', base_title.to_s
   end
 
   it 'should get help' do
     get :help
-    expect(response).to be_success
+    expect(response).to be_successful
     assert_select 'title', "Help | #{base_title}"
   end
 
   it 'should get about' do
     get :about
-    expect(response).to be_success
+    expect(response).to be_successful
     assert_select 'title', "About | #{base_title}"
   end
 
   it 'should get contact' do
     get :contact
-    expect(response).to be_success
+    expect(response).to be_successful
     assert_select 'title', "Contact | #{base_title}"
   end
 end
