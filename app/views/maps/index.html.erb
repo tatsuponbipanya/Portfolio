@@ -14,44 +14,32 @@
 </style>
 
 <script>
-/*
-【Turbo対策】
-何度も let で同じ変数を宣言するとエラーになるため、
-すでに存在していなければ初期化する、という書き方に変更する
-*/
+// グローバル変数の重複宣言を防ぐおまじない
 window.map = window.map || null;
 window.geocoder = window.geocoder || null;
 
+// 地図を初期化する本番関数
 function initMap(){
   const mapElement = document.getElementById('map');
-  if (!mapElement) return; // 画面に#mapがなければ何もしない（エラー予防）
+  if (!mapElement) return; // 画面に#mapがなければ何もしない
 
-  // geocoderを初期化（すでになければ作る）
   if (!window.geocoder) {
     window.geocoder = new google.maps.Geocoder();
   }
 
-  // 地図の初期化（東京駅を中心に設定）
   window.map = new google.maps.Map(mapElement, {
-    center: {lat: 35.681228, lng: 139.767052},
+    center: {lat: 35.681228, lng: 139.767052}, // 東京駅中心
     zoom: 12
   });
 }
 
 function codeAddress(){
-  // 入力を取得
   let inputAddress = document.getElementById('address').value;
-
-  // geocoderが準備できていなければ処理しない
   if (!window.geocoder) return;
 
-  // geocodingしたあとmapを移動
   window.geocoder.geocode( { 'address': inputAddress}, function(results, status) {
     if (status == 'OK') {
-      // map.setCenterで地図が移動
       window.map.setCenter(results[0].geometry.location);
-
-      // google.maps.MarkerでGoogleMap上の指定位置にマーカが立つ
       var marker = new google.maps.Marker({
           map: window.map,
           position: results[0].geometry.location
@@ -62,15 +50,21 @@ function codeAddress(){
   });
 }
 
-/* 【ここが一番大事！】
-Railsの画面遷移（Turbo）が発生したときに、
-すでにGoogleマップが読み込まれていたら手動で地図を初期化するおまじない
-*/
+// ページが切り替わったときのTurbo対策
 document.addEventListener("turbo:load", function() {
   if (typeof google !== 'undefined' && google.maps) {
+    // すでにGoogleが読み込まれていたら、関数を呼ぶだけで地図を作る
     initMap();
+  } else {
+    // まだ読み込まれていなければ、1回だけスクリプトを生成して埋め込む（二重読み込み防止！）
+    if (!document.getElementById('google-maps-api-script')) {
+      const script = document.createElement('script');
+      script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyCtdZ2kpdgmGomePA2LXqc4Y4gWq5hF92k";
+      script.id = 'google-maps-api-script';
+      script.async = true;
+      script.defer = true;
+      document.head.appendChild(script);
+    }
   }
 });
 </script>
-
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtdZ2kpdgmGomePA2LXqc4Y4gWq5hF92k" async defer></script>
