@@ -14,11 +14,11 @@
 </style>
 
 <script>
-// グローバル変数の重複宣言を防ぐおまじない
+// 変数の重複宣言を防ぐ
 window.map = window.map || null;
 window.geocoder = window.geocoder || null;
 
-// 地図を初期化する本番関数
+// 地図を初期化する関数
 function initMap(){
   const mapElement = document.getElementById('map');
   if (!mapElement) return; // 画面に#mapがなければ何もしない
@@ -28,7 +28,7 @@ function initMap(){
   }
 
   window.map = new google.maps.Map(mapElement, {
-    center: {lat: 35.681228, lng: 139.767052}, // 東京駅中心
+    center: {lat: 35.681228, lng: 139.767052}, // 東京駅
     zoom: 12
   });
 }
@@ -50,13 +50,11 @@ function codeAddress(){
   });
 }
 
-// ページが切り替わったときのTurbo対策
-document.addEventListener("turbo:load", function() {
+// 【超対策】どんなタイミングでも確実に地図を起動させる関数
+function loadGoogleMaps() {
   if (typeof google !== 'undefined' && google.maps) {
-    // すでにGoogleが読み込まれていたら、関数を呼ぶだけで地図を作る
     initMap();
   } else {
-    // まだ読み込まれていなければ、1回だけスクリプトを生成して埋め込む（二重読み込み防止！）
     if (!document.getElementById('google-maps-api-script')) {
       const script = document.createElement('script');
       script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyCtdZ2kpdgmGomePA2LXqc4Y4gWq5hF92k";
@@ -66,5 +64,14 @@ document.addEventListener("turbo:load", function() {
       document.head.appendChild(script);
     }
   }
-});
+}
+
+// 1. 最初のリロードや直接URLを入力して開いたとき用
+document.addEventListener("DOMContentLoaded", loadGoogleMaps);
+
+// 2. 他のページからリンクを押して飛んできたとき（Turbo遷移）用
+document.addEventListener("turbo:load", loadGoogleMaps);
+
+// 3. 上記の2つが万が一すり抜けたときの最終バックアップ
+loadGoogleMaps();
 </script>
