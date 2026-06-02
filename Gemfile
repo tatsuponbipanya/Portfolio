@@ -28,8 +28,8 @@ gem 'turbolinks', '~> 5'
 gem 'uglifier', '3.2.0'
 
 group :development, :test do
-  gem 'sqlite3', '~> 1.3.13' # 重複してる分は消して一つにする！
-  gem 'byebug', '9.0.6', platform: :mri
+  gem 'sqlite3', '~> 1.4' # 重複してる分は消して一つにする！
+  gem 'byebug', '11.1.3', platform: :mri
   gem 'capistrano'
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
