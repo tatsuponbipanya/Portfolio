@@ -1,10 +1,8 @@
 <% provide(:title, "Map") %>
 <h3>マップ</h3>
 旅行先の下調べ等にご利用下さい。
-<!-- 地名入力用のinputを追加 -->
 <input id="address" type="textbox" placeholder="検索したい場所を入力">
 
-<!-- buttonをクリックしたらcodeAddressを実行　-->
 <input type="button" value="検索" onclick="codeAddress()">
 <div id='map'>
 </div>
@@ -17,20 +15,26 @@
 
 <script>
 /*
-mapを関数の外で定義(codeAddressでも使うため)
-geocoderを用意
+【Turbo対策】
+何度も let で同じ変数を宣言するとエラーになるため、
+すでに存在していなければ初期化する、という書き方に変更する
 */
-
-let map
-let geocoder
+window.map = window.map || null;
+window.geocoder = window.geocoder || null;
 
 function initMap(){
-  // geocoderを初期化
-  geocoder = new google.maps.Geocoder()
+  const mapElement = document.getElementById('map');
+  if (!mapElement) return; // 画面に#mapがなければ何もしない（エラー予防）
 
-  map = new google.maps.Map(document.getElementById('map'), {
-  center: {lat: -34.397, lng: 150.644},
-  zoom: 8
+  // geocoderを初期化（すでになければ作る）
+  if (!window.geocoder) {
+    window.geocoder = new google.maps.Geocoder();
+  }
+
+  // 地図の初期化（東京駅を中心に設定）
+  window.map = new google.maps.Map(mapElement, {
+    center: {lat: 35.681228, lng: 139.767052},
+    zoom: 12
   });
 }
 
@@ -38,15 +42,18 @@ function codeAddress(){
   // 入力を取得
   let inputAddress = document.getElementById('address').value;
 
-  // geocodingしたあとmapを移動
-  geocoder.geocode( { 'address': inputAddress}, function(results, status) {
-    if (status == 'OK') {
-　　　　　　　　　　　　// map.setCenterで地図が移動
-      map.setCenter(results[0].geometry.location);
+  // geocoderが準備できていなければ処理しない
+  if (!window.geocoder) return;
 
-　　　　　　　　　　　　// google.maps.MarkerでGoogleMap上の指定位置にマーカが立つ
+  // geocodingしたあとmapを移動
+  window.geocoder.geocode( { 'address': inputAddress}, function(results, status) {
+    if (status == 'OK') {
+      // map.setCenterで地図が移動
+      window.map.setCenter(results[0].geometry.location);
+
+      // google.maps.MarkerでGoogleMap上の指定位置にマーカが立つ
       var marker = new google.maps.Marker({
-          map: map,
+          map: window.map,
           position: results[0].geometry.location
       });
     } else {
@@ -54,5 +61,16 @@ function codeAddress(){
     }
   });
 }
+
+/* 【ここが一番大事！】
+Railsの画面遷移（Turbo）が発生したときに、
+すでにGoogleマップが読み込まれていたら手動で地図を初期化するおまじない
+*/
+document.addEventListener("turbo:load", function() {
+  if (typeof google !== 'undefined' && google.maps) {
+    initMap();
+  }
+});
 </script>
+
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtdZ2kpdgmGomePA2LXqc4Y4gWq5hF92k" async defer></script>
