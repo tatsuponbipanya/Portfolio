@@ -2,12 +2,11 @@
 
 class PictureUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
-  process resize_to_limit: [400, 400]
+  process :resize_to_limit, [400, 400]
 
-  # ストレージを :file に統一するじぇ！
+  # ストレージを :file に統一する
   storage :file
 
-  # （以下、store_dir などのメソッドはそのまま残してOKだぞ！）
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
