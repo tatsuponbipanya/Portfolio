@@ -1,8 +1,9 @@
 # TRAVEL MEMORIES
 旅行のプランを立てたり、思い出を共有出来るSNSサイトです。
 ![top](https://user-images.githubusercontent.com/54243961/74304543-a5ccf400-4da0-11ea-95d9-e81030d58881.png)
-# 本番環境
-AWS  https://sns.travel-memories-2020.com/   
+# 本番環境  
+~~AWS https://sns.travel-memories-2020.com/~~ （※現在はインフラ停止中のため閲覧できません）
+
 Render https://portfolio-uffa.onrender.com/
 # 使用技術 / Technology
 **Backend:** 　Ruby on Rails, Ruby
