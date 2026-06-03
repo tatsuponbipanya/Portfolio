@@ -44,7 +44,7 @@ group :development do
   gem 'rubocop-rails', require: false
   gem 'spring',                '2.0.2'
   gem 'spring-watcher-listen', '2.0.1'
-  gem 'web-console',           '3.5.1'
+  #gem 'web-console',           '3.5.1'
 end
 
 group :test do

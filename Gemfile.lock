@@ -74,7 +74,6 @@ GEM
     base64 (0.3.0)
     bcrypt (3.1.12)
     bigdecimal (3.3.1)
-    bindex (0.8.1)
     bootstrap-sass (3.4.1)
       autoprefixer-rails (>= 5.2.1)
       sassc (>= 2.0.0)
@@ -438,11 +437,6 @@ GEM
     unicorn (6.1.0)
       kgio (~> 2.6)
       raindrops (~> 0.7)
-    web-console (3.5.1)
-      actionview (>= 5.0)
-      activemodel (>= 5.0)
-      bindex (>= 0.4.0)
-      railties (>= 5.0)
     websocket (1.2.11)
     websocket-driver (0.8.0)
       base64
@@ -513,7 +507,6 @@ DEPENDENCIES
   tzinfo-data
   uglifier (= 3.2.0)
   unicorn
-  web-console (= 3.5.1)
   will_paginate (>= 3.3.0)
 
 RUBY VERSION

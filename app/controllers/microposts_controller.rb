@@ -5,12 +5,14 @@ class MicropostsController < ApplicationController
   before_action :correct_user,   only: :destroy
 
   def create
+    # 一番標準的な書き方に戻す
     @micropost = current_user.microposts.build(micropost_params)
+    
     if @micropost.save
-      flash[:success] = '投稿しました。'
+      flash[:success] = "投稿したよ！"
       redirect_to root_url
     else
-      @feed_items = current_user.feed.paginate(page: params[:page])
+      @feed_items = []
       render 'static_pages/home'
     end
   end
@@ -23,6 +25,7 @@ class MicropostsController < ApplicationController
 
   private
 
+  # ここで許可する属性を明示する
   def micropost_params
     params.require(:micropost).permit(:content, :picture)
   end

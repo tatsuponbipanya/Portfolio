@@ -80,7 +80,7 @@ class Micropost < ApplicationRecord
 
   # アップロードされた画像のサイズのバリデーション
   def picture_size
-    if picture.size > 5.megabytes
+    if picture.present? && picture.size > 5.megabytes
       errors.add(:picture, 'ファイルサイズが大きすぎます。（最大で5MBまで）')
     end
   end
