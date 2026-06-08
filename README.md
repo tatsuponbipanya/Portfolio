@@ -4,7 +4,7 @@
 # 本番環境  
 ~~AWS https://sns.travel-memories-2020.com/~~ （※現在はインフラ停止中のため閲覧できません）
 
-Render https://portfolio-uffa.onrender.com/
+~~Render https://portfolio-uffa.onrender.com/~~ （新ポートフォリオにデータベースを移行したため、現在閲覧できません）
 # 使用技術 / Technology
 **Backend:** 　Ruby on Rails, Ruby
 
